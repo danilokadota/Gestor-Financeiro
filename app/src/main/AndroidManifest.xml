@@ -10,6 +10,14 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".CadastroActivity"
+            android:label="@string/title_activity_cadastro" >
+        </activity>
+        <activity
+            android:name=".MesesActivity"
+            android:label="@string/title_activity_meses" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
