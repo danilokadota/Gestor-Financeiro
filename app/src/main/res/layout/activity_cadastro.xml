@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/menu_background"
-    tools:context="br.com.brunokadota.gestorfinaceiro.CadastroActivity">
+    tools:context=".CadastroActivity">
 
     <FrameLayout
         android:id="@+id/container"
@@ -34,6 +34,7 @@
                     android:paddingRight="5dp" />
 
                 <EditText
+                    android:id="@id/cadastro_edit_nome"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="text" />
@@ -55,6 +56,7 @@
                     android:paddingRight="5dp" />
 
                 <EditText
+                    android:id="@id/cadastro_edit_valor"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="numberDecimal" />
@@ -80,8 +82,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="time" />
-            </LinearLayout>
 
+            </LinearLayout>
 
             <ListView
                 android:paddingTop="10dp"
