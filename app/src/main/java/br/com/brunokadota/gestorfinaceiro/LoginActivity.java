@@ -50,7 +50,8 @@ public class LoginActivity extends ActionBarActivity {
             startActivity(menuActivity);
             finish();
         } else {
-            Toast.makeText(getBaseContext(), "Informe usuário e senha válidos", Toast.LENGTH_SHORT);
+
+            Toast.makeText(LoginActivity.this, "Informe usuário e senha válidos", Toast.LENGTH_SHORT).show();
             editTextSenha.setText("");
         }
 
