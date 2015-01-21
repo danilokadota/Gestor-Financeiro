@@ -5,4 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <!--Menu-->
+
+    <string name="menu_btn_consulta">Consulta</string>
+    <string name="menu_btn_cadastro">Cadastro</string>
+
 </resources>
