@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Gestor-Financeiro.iml" filepath="$PROJECT_DIR$/Gestor-Financeiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/GestorFinaceiro.iml" filepath="$PROJECT_DIR$/GestorFinaceiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
