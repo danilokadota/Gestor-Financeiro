@@ -5,8 +5,13 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+<<<<<<< HEAD
+    <!-- Menu -->
+
+=======
     <!--Menu-->
     <string name="menu">Menu</string>
+>>>>>>> 3a24673cfa88181aca12dfa19426e3a1d84a1023
     <string name="menu_btn_consulta">Consulta</string>
     <string name="menu_btn_cadastro">Cadastro</string>
     <string name="title_activity_cadastro">CadastroActivity</string>

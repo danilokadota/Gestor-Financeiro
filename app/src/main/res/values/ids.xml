@@ -3,4 +3,10 @@
     <item name="menu_btn_consulta" type="id"/>
     <item name="menu_btn_cadastro" type="id"/>
 
+    <!-- Login -->
+    <item name="login_edit_usuario" type="id"/>
+    <item name="login_edit_senha" type="id"/>
+    <item name="login_btn_entrar" type="id"/>
+
+
 </resources>
