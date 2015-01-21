@@ -12,6 +12,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.Toast;
+
+import br.com.brunokadota.gestorfinaceiro.dao.GastoDAO;
+import br.com.brunokadota.gestorfinaceiro.model.Gasto;
 
 
 public class CadastroActivity extends ActionBarActivity
@@ -19,13 +25,17 @@ public class CadastroActivity extends ActionBarActivity
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private CharSequence mTitle;
-
+    private EditText editTextNome;
+    private EditText editTextValor;
+    private EditText editTextVencimento;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+
+        findView();
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -37,6 +47,22 @@ public class CadastroActivity extends ActionBarActivity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
     }
 
+    public void inserirGasto() {
+        Gasto gasto = new Gasto(1, editTextNome.getText().toString(),
+                Float.parseFloat(editTextValor.getText().toString()),
+                "12/12/2015", "Janeiro");
+        GastoDAO gastoDAO = new GastoDAO(getBaseContext());
+
+        long resp = gastoDAO.inserir(gasto);
+
+        Toast.makeText(getBaseContext(), "retorno: " + resp, Toast.LENGTH_SHORT).show();
+    }
+
+    public void findView() {
+        editTextNome = (EditText) findViewById(R.id.cadastro_edit_nome);
+        editTextValor = (EditText) findViewById(R.id.cadastro_edit_valor);
+        editTextVencimento = (EditText) findViewById(R.id.cadastro_edit_vencimento);
+    }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
@@ -111,17 +137,11 @@ public class CadastroActivity extends ActionBarActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (item.getItemId() == R.id.action_example) {
+            inserirGasto();
         }
-
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
 

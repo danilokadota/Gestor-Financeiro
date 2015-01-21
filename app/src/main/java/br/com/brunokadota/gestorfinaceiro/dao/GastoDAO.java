@@ -36,7 +36,7 @@ public class GastoDAO {
                 gasto.getValor());
 
         values.put(DatabaseHelper.Gasto.VENCIMENTO,
-                gasto.getVencimento().getTime());
+                gasto.getVencimento());
 
         values.put(DatabaseHelper.Gasto.MES,
                 gasto.getMes());

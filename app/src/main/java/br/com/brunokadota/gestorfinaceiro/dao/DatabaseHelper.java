@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE gastos (_id INTEGER PRIMARY KEY, " +
                 "nome TEXT, " +
                 "valor DOUBLE, " +
-                "vencimento DATE, mes TEXT);");
+                "vencimento TEXT, mes TEXT);");
     }
 
     @Override

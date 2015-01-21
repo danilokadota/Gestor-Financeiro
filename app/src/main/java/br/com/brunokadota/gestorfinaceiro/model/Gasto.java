@@ -10,7 +10,7 @@ public class Gasto {
     public Gasto() {
     }
 
-    public Gasto(int id, String nome, float valor, Date vencimento, String mes) {
+    public Gasto(int id, String nome, float valor, String vencimento, String mes) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
@@ -21,7 +21,7 @@ public class Gasto {
     private int id;
     private String nome;
     private float valor;
-    private Date vencimento;
+    private String vencimento;
     private String mes;
 
     public int getId() {
@@ -48,11 +48,11 @@ public class Gasto {
         this.valor = valor;
     }
 
-    public Date getVencimento() {
+    public String getVencimento() {
         return vencimento;
     }
 
-    public void setVencimento(Date vencimento) {
+    public void setVencimento(String vencimento) {
         this.vencimento = vencimento;
     }
 
