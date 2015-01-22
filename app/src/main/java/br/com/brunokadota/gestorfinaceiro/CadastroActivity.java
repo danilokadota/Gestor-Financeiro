@@ -1,6 +1,8 @@
 package br.com.brunokadota.gestorfinaceiro;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -12,22 +14,26 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 import br.com.brunokadota.gestorfinaceiro.dao.GastoDAO;
 import br.com.brunokadota.gestorfinaceiro.model.Gasto;
 
 
 public class CadastroActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, View.OnClickListener {
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private CharSequence mTitle;
     private EditText editTextNome;
     private EditText editTextValor;
-    private EditText editTextVencimento;
+    private Button btnDateVencimento;
+    static final int DATE_DIALOG_ID = 0;
 
 
     @Override
@@ -40,6 +46,8 @@ public class CadastroActivity extends ActionBarActivity
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
+
+        btnDateVencimento.setOnClickListener((View.OnClickListener) this);
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -61,7 +69,7 @@ public class CadastroActivity extends ActionBarActivity
     public void findView() {
         editTextNome = (EditText) findViewById(R.id.cadastro_edit_nome);
         editTextValor = (EditText) findViewById(R.id.cadastro_edit_valor);
-        editTextVencimento = (EditText) findViewById(R.id.cadastro_edit_vencimento);
+        btnDateVencimento = (Button) findViewById(R.id.cadastro_edit_vencimento);
     }
 
     @Override
@@ -144,6 +152,13 @@ public class CadastroActivity extends ActionBarActivity
         return true;
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v == btnDateVencimento) {
+            showDialog(DATE_DIALOG_ID);
+        }
+    }
+
 
     /**
      * A placeholder fragment containing a simple view.
@@ -184,4 +199,26 @@ public class CadastroActivity extends ActionBarActivity
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        Calendar calendar = Calendar.getInstance();
+
+        int ano = calendar.get(Calendar.YEAR);
+        int mes = calendar.get(Calendar.MONTH);
+        int dia = calendar.get(Calendar.DAY_OF_MONTH);
+
+        switch (id) {
+            case DATE_DIALOG_ID:
+                return new DatePickerDialog(this, mDateSetListener, ano, mes, dia);
+        }
+        return null;
+    }
+
+    private DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            String data = String.valueOf(dayOfMonth) + "/" + String.valueOf(monthOfYear + 1) + "/" + String.valueOf(year);
+            btnDateVencimento.setText(data);
+        }
+    };
 }
