@@ -15,9 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+<<<<<<< HEAD
 import android.widget.Button;
 import android.widget.DatePicker;
+=======
 import android.widget.CheckBox;
+>>>>>>> 1704f7de621e6b5a7beeda5607f7c5543e0b077c
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -34,11 +37,15 @@ public class CadastroActivity extends ActionBarActivity
     private CharSequence mTitle;
     private EditText editTextNome;
     private EditText editTextValor;
+<<<<<<< HEAD
     private Button btnDateVencimento;
     static final int DATE_DIALOG_ID = 0;
+=======
+    private EditText editTextVencimento;
     private EditText editTextQuantidadeParcelas;
     private CheckBox checkBoxParcelado;
-
+    private static boolean flag = true;
+>>>>>>> 1704f7de621e6b5a7beeda5607f7c5543e0b077c
 
 
     @Override
@@ -81,7 +88,10 @@ public class CadastroActivity extends ActionBarActivity
     public void findView() {
         editTextNome = (EditText) findViewById(R.id.cadastro_edit_nome);
         editTextValor = (EditText) findViewById(R.id.cadastro_edit_valor);
+<<<<<<< HEAD
         btnDateVencimento = (Button) findViewById(R.id.cadastro_edit_vencimento);
+=======
+        editTextVencimento = (EditText) findViewById(R.id.cadastro_edit_vencimento);
         editTextQuantidadeParcelas = (EditText) findViewById(R.id.cadastro_edit_quatidade_parcelas);
         checkBoxParcelado = (CheckBox) findViewById(R.id.cadastro_chb_parcelado);
     }
@@ -95,6 +105,7 @@ public class CadastroActivity extends ActionBarActivity
             anim.reverse();
         }
         Toast.makeText(getBaseContext(), "teste", Toast.LENGTH_SHORT).show();
+>>>>>>> 1704f7de621e6b5a7beeda5607f7c5543e0b077c
     }
 
     @Override

@@ -13,6 +13,7 @@
             android:name=".LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,11 +28,15 @@
         <activity
             android:name=".CadastroActivity"
             android:label="@string/title_activity_cadastro"
+<<<<<<< HEAD
+            android:screenOrientation="portrait" />
+=======
             android:screenOrientation="portrait">
 
 
         </activity>
 
+>>>>>>> 1704f7de621e6b5a7beeda5607f7c5543e0b077c
     </application>
 
 </manifest>

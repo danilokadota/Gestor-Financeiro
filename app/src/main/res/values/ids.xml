@@ -12,5 +12,7 @@
     <item name="cadastro_edit_nome" type="id" />
     <item name="cadastro_edit_valor" type="id" />
     <item name="cadastro_edit_vencimento" type="id" />
+    <item name="cadastro_chb_parcelado" type="id" />
+    <item name="cadastro_edit_quatidade_parcelas" type="id" />
 
 </resources>

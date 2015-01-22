@@ -29,7 +29,10 @@ public class LoginActivity extends ActionBarActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                captureValues();
+                //captureValues();
+                Intent menuActivity = new Intent(getBaseContext(), MenuActivity.class);
+                startActivity(menuActivity);
+                finish();
             }
         });
 
