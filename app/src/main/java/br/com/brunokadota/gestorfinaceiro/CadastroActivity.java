@@ -1,5 +1,6 @@
 package br.com.brunokadota.gestorfinaceiro;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -28,6 +30,9 @@ public class CadastroActivity extends ActionBarActivity
     private EditText editTextNome;
     private EditText editTextValor;
     private EditText editTextVencimento;
+    private EditText editTextQuantidadeParcelas;
+    private CheckBox checkBoxParcelado;
+    private static boolean flag = true;
 
 
     @Override
@@ -45,6 +50,13 @@ public class CadastroActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        checkBoxParcelado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideOrShow();
+            }
+        });
     }
 
     public void inserirGasto() {
@@ -62,6 +74,19 @@ public class CadastroActivity extends ActionBarActivity
         editTextNome = (EditText) findViewById(R.id.cadastro_edit_nome);
         editTextValor = (EditText) findViewById(R.id.cadastro_edit_valor);
         editTextVencimento = (EditText) findViewById(R.id.cadastro_edit_vencimento);
+        editTextQuantidadeParcelas = (EditText) findViewById(R.id.cadastro_edit_quatidade_parcelas);
+        checkBoxParcelado = (CheckBox) findViewById(R.id.cadastro_chb_parcelado);
+    }
+
+    public void hideOrShow() {
+        ObjectAnimator anim = ObjectAnimator.ofFloat(editTextQuantidadeParcelas, "alpha", 0f, 1f);
+
+        if (checkBoxParcelado.isChecked()) {
+            anim.start();
+        } else {
+            anim.reverse();
+        }
+        Toast.makeText(getBaseContext(), "teste", Toast.LENGTH_SHORT).show();
     }
 
     @Override

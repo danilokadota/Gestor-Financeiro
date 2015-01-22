@@ -15,6 +15,7 @@
     <string name="cadastro_nome">Nome:</string>
     <string name="cadastro_vencimento">Vencimento:</string>
     <string name="cadastro_valor">Valor:</string>
+    <string name="cadastro_valor_parcelado">Parcelado</string>
 
 
     <string name="title_activity_meses">Meses</string>
